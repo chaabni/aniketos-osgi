@@ -119,7 +119,7 @@ public class ConverterDialog extends JFrame implements ChangeListener  {
                         try {
                             double value = Double.parseDouble(valueStr);
                             double result = converterDialogListener.onCelciusToFahrenheit(value);
-                            System.out.println("Celcius " + valueStr + " => Fahrenheit " + result);
+                            //System.out.println("Celcius " + valueStr + " => Fahrenheit " + result);
                         }
                         catch(NumberFormatException ex) {
                             System.err.println(valueStr + " can't be parsed as double");
@@ -130,7 +130,7 @@ public class ConverterDialog extends JFrame implements ChangeListener  {
                         try {
                             double value = Double.parseDouble(valueStr);
                             double result = converterDialogListener.onFahrenheitToCelcius(value);
-                            System.out.println("Fahrenheit " + valueStr + " => Celcius " + result);
+                            //System.out.println("Fahrenheit " + valueStr + " => Celcius " + result);
                         }
                         catch(NumberFormatException ex) {
                             System.err.println(valueStr + " can't be parsed as double");
