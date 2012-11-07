@@ -1,0 +1,8 @@
+<features>
+  <feature name="converter-ds-feature" version="1.0">       
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter/1.0.0</bundle>
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter-impl/1.0.0</bundle>
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter-client/1.0.0</bundle>
+    <bundle>mvn:org.apache.felix/org.apache.felix.scr/1.6.0</bundle>
+  </feature>
+</features>
