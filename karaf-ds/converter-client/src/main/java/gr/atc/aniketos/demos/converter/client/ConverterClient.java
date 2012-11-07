@@ -56,16 +56,10 @@ public class ConverterClient {
         });        
     }
 
-    /**
-     * Unsets the Marketplace service.
-     * @param service The Marketplace service
-     */
     public synchronized void unsetService(Converter service) {
         System.out.println("Converter Service was unset.");
         if (this.service == service) {
             this.service = null;
         }
-    }    
-
-
+    } 
 }
