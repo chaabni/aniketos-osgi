@@ -1,0 +1,20 @@
+<features>
+  <feature name="converter-slf4j-feature" version="1.0">       
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter/1.0.0</bundle>
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter-impl/1.0.0</bundle>
+    <bundle>mvn:gr.atc.aniketos.demos.converterservice/converter-client/1.0.0</bundle>
+    
+    <bundle>mvn:org.slf4j/slf4j-api/1.7.2</bundle>
+    <bundle>mvn:ch.qos.logback/logback-core/1.0.9</bundle>
+    <bundle>mvn:ch.qos.logback/logback-classic/1.0.9</bundle>
+    <bundle>mvn:logback-config/logback-config/1.0.0</bundle>
+    
+    <bundle>mvn:org.apache.felix/org.apache.felix.scr/1.6.0</bundle>
+    
+    <!--    
+    <bundle>http://ebr.springsource.com/repository/app/bundle/version/download?name=org.eclipse.equinox.util&version=1.0.200.v20100503&type=binary</bundle>
+    <bundle>http://ebr.springsource.com/repository/app/bundle/version/download?name=org.eclipse.osgi.services&version=3.3.0.v20101018&type=binary</bundle>
+    <bundle>http://ebr.springsource.com/repository/app/bundle/version/download?name=org.eclipse.equinox.ds&version=1.3.0.v20110124-0830&type=binary</bundle>    
+    -->
+  </feature>
+</features>
