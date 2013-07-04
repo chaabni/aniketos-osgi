@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
+               name="gr.atc.aniketos.demos.converter.servlet">
+   <implementation class="gr.atc.aniketos.demos.converter.webclient.ConverterServlet"/>
+   <service>
+      <provide interface="javax.servlet.Servlet"/>
+   </service>
+   
+   <reference name="Converter" policy="static" cardinality="1..1" 
+              interface="gr.atc.aniketos.demos.converter.Converter" 
+              bind="setConverterService" unbind="unsetConverterService"/>
+   
+   <property name="Web-ContextPath" type="String" value="/converter"/>
+   <property name="name" type="String" value="converter"/> 
+</scr:component>

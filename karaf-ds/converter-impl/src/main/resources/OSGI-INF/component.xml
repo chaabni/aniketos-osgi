@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" modified="modified" name="gr.atc.aniketos.demos.converter.impl">
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
+               modified="modified" 
+               name="gr.atc.aniketos.demos.converter.impl">
    <implementation class="gr.atc.aniketos.demos.converter.impl.ConverterImpl"/>
    <service>
       <provide interface="gr.atc.aniketos.demos.converter.Converter"/>

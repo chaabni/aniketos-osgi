@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Temperature Conversions</title>
+    
+    <link href="jquery-ui-1.8.14.custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="jquery.bgiframe-2.1.2.js" type="text/javascript"></script>
+    <script src="jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script> 
+    
+    <style>
+    .search-form
+    {
+        padding: 8px 8px 8px 8px;
+        width: 600px;
+    }
+
+    label
+    {
+        font-weight: bold;
+        color: #4776AA;
+    }
+
+    label.fixed
+    {
+        display: block;
+        float: left;
+        width: 100px;
+        vertical-align: middle;
+    }
+
+    .temperature-text
+    {
+        width: 120px;
+    }
+
+    div.form-field
+    {
+        margin-bottom: 5px;
+    }
+
+    .error
+    {
+        color: Red;
+    }
+    
+    </style>
+
+    <script>
+
+    $(function() {
+        $("#ConvertCelciusButton, #ConvertFahrenheitButton").button({
+            icons: { primary: "ui-icon-shuffle" }
+        });        
+        
+        $("#ConvertCelciusButton").click(function() {
+            var celcius = $("#Celcius").val();
+            var $result = $(this).next();           
+           
+            $.ajax({ type: "GET", url: "converter", dataType: "json", 
+                     data: {"conversion": "celcius", "val": celcius},
+                     success: function(data) {
+                        if (data.success) {
+                            $result.text("Fahrenheit = " + data.result);
+                            $result.removeClass("error");
+                        }
+                        else {
+                            $result.text(data.error);
+                            $result.addClass("error");
+                        }
+                     },
+                     error: function() {
+                        alert ("There was an error with the request!");
+                     }});            
+        });
+        
+        $("#ConvertFahrenheitButton").click(function() {
+            var fahrenheit = $("#Fahrenheit").val();
+            var $result = $(this).next();           
+           
+            $.ajax({ type: "GET", url: "converter", dataType: "json", 
+                     data: {"conversion": "fahrenheit", "val": fahrenheit},
+                     success: function(data) {
+                        if (data.success) {
+                            $result.text("Celcius = " + data.result);
+                            $result.removeClass("error");
+                        }
+                        else {
+                            $result.text(data.error);
+                            $result.addClass("error");
+                        }
+                     },
+                     error: function() {
+                        alert ("There was an error with the request!");
+                     }});  
+        });        
+    });
+    </script>
+</head>
+<body>
+<div style="float:left;margin-right:20px;">
+    <img src="images/hot.png" alt="Temperature">
+</div>
+<div>
+    <div class="search-form">
+        <div class="form-field">
+            <label class="fixed" for="Fahrenheit">Fahrenheit to Celcius: </label>
+            <input id="Fahrenheit" type="text" name="Fahrenheit" class="ui-widget-content ui-corner-all temperature-text" />
+        </div>
+        <div style="margin-top:12px;margin-bottom:20px;">
+            <button id="ConvertFahrenheitButton">Convert</button>
+            <span class="result"></span>
+        </div>
+    </div>
+    <div class="search-form">        
+        <div class="form-field">
+            <label class="fixed" for="Celcius">Celcius to Fahrenheit: </label>
+            <input id="Celcius" type="text" name="Celcius" class="ui-widget-content ui-corner-all temperature-text" />
+        </div>
+        <div style="margin-top:12px;margin-bottom:20px;">
+            <button id="ConvertCelciusButton">Convert</button>
+            <span class="result"></span>
+        </div>
+    </div>    
+</div>
+</body>
+</html>

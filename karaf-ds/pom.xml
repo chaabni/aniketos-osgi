@@ -13,6 +13,7 @@
         <module>converter</module>
         <module>converter-impl</module>
         <module>converter-client</module>
+        <module>converter-webclient</module>
         <module>converter-ds-feature</module>
     </modules>
  

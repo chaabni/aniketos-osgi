@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>aniketos</groupId>
     <artifactId>springjdbc-test</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <url>http://maven.apache.org</url>
     <name>Parent Project</name>
@@ -14,5 +14,18 @@
         <module>mysql-springjdbc-fragment</module>
         <module>springjdbc-feature</module>
     </modules>
+ 
+     <distributionManagement>
+        <repository>
+            <id>prometheus-atc</id> 
+            <name>prometheus-atc-releases</name> 
+            <url>http://prometheus.atc.gr:8080/nexus/content/repositories/releases/</url> 
+        </repository>
+        <snapshotRepository>
+            <id>prometheus-atc</id> 
+            <name>prometheus-atc-snapshots</name> 
+            <url>http://prometheus.atc.gr:8080/nexus/content/repositories/snapshots/</url> 
+        </snapshotRepository>
+    </distributionManagement>
  
 </project>

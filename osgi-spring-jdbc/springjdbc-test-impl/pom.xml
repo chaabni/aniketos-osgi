@@ -5,18 +5,18 @@
     <groupId>aniketos</groupId>
     <artifactId>springjdbc-test-impl</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <name>springjdbc-test</name>
     <url>http://maven.apache.org</url>
   
     <properties>
         <spring.version>3.1.1.RELEASE</spring.version>
-        
-		<bundle.require.bundle>org.springframework.jdbc</bundle.require.bundle>
 		<bundle.import.package>
  javax.sql,
  org.springframework.core;version="[2.5.6,3.1.2)",
- org.springframework.jdbc;version="[2.5.6,3.1.2)",
+ org.springframework.jdbc.core;version="[2.5.6,3.2)",
+ org.springframework.jdbc.datasource;version="[2.5.6,3.2)",
+ org.springframework.jdbc.support;version="[2.5.6,3.2)",
  org.springframework.transaction;version="[2.5.6,3.1.2)"        
 		</bundle.import.package>
 		<bundle.export.package></bundle.export.package>        
@@ -36,7 +36,6 @@
 						<Bundle-Name>${project.artifactId}</Bundle-Name>
 						<Bundle-Description>A bundle that demonstrates the use of SPRING JDBC in an OSGi environment</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Require-Bundle>${bundle.require.bundle}</Require-Bundle>
 						<Import-Package>${bundle.import.package}</Import-Package>
 						<Export-Package>${bundle.export.package}</Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
@@ -77,5 +76,18 @@
 			<version>${spring.version}</version>
 		</dependency>        
     </dependencies>
+  
+    <distributionManagement>
+        <repository>
+            <id>prometheus-atc</id> 
+            <name>prometheus-atc-releases</name> 
+            <url>http://prometheus.atc.gr:8080/nexus/content/repositories/releases/</url> 
+        </repository>
+        <snapshotRepository>
+            <id>prometheus-atc</id> 
+            <name>prometheus-atc-snapshots</name> 
+            <url>http://prometheus.atc.gr:8080/nexus/content/repositories/snapshots/</url> 
+        </snapshotRepository>
+    </distributionManagement>
   
 </project>
